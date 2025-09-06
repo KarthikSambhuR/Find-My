@@ -1,0 +1,24 @@
+<!-- res/layout/dialog_edit_phone.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <EditText
+        android:id="@+id/edit_phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Phone Number"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/edit_phone_alias"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Alias (e.g., Primary, Work)"
+        android:inputType="text"
+        android:maxLength="10"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>

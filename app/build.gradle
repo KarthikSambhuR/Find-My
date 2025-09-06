@@ -1,0 +1,63 @@
+// app/build.gradle
+
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services' // Add this line
+}
+
+android {
+    namespace 'dev.sambhu.findmyfamily'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "dev.sambhu.findmyfamily"
+        minSdk 29 // Android 10
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "cloudflareWorkerUrl", "\"https://yourcloudflare.workers.dev/sendLocation\""
+        buildConfigField "String", "cloudflareWorkerBaseUrl", "\"https://yourcloudflare.workers.dev\""
+        buildConfigField "String", "SMSKeywordLocate", "\"yoursmskeyword\""
+        buildConfigField "String", "SMSKeywordRing", "\"yoursmsringkeyword\""
+        buildConfigField "String", "SecretKey", "\"YourSuperSecretKeyHere!@#123\""
+    }
+
+    buildFeatures {
+        buildConfig = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.firebase:firebase-firestore:24.11.1'
+    implementation 'com.google.firebase:firebase-messaging:23.4.1'
+    implementation 'com.google.firebase:firebase-auth:22.3.1'
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    implementation 'org.osmdroid:osmdroid-android:6.1.18'
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+    implementation platform('com.google.firebase:firebase-bom:34.2.0')
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-firestore'
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.android.volley:volley:1.2.1'
+    implementation 'com.google.android.gms:play-services-auth:20.7.0'
+    implementation "androidx.work:work-runtime:2.9.0"
+    implementation "androidx.concurrent:concurrent-futures-ktx:1.1.0"
+    implementation 'com.google.guava:guava:33.0.0-jre'
+}

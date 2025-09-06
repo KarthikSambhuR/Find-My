@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Find My</string>
+    <string name="profile_picture">Profile picture</string>
+    <string name="internet_button_message">Locate using Internet</string>
+    <string name="ring_button_message">Ring</string>
+    <string name="sms_button_message">SMS</string>
+    <string name="battery_icon_description">Battery status icon</string>
+</resources>

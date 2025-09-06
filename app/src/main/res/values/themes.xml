@@ -1,0 +1,25 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.FindMyFamily" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:colorBackground">@color/app_background</item>
+        <item name="colorSurface">@color/app_background</item>
+        <item name="colorSurfaceContainer">@color/surface_container</item>
+        <item name="colorError">@color/error</item>
+
+        <item name="colorOnBackground">@color/primary_text</item>
+        <item name="colorOnSurface">@color/primary_text</item>
+        <item name="colorOnSurfaceVariant">@color/secondary_text</item>
+        <item name="colorOnPrimaryContainer">@color/icon_tint</item>
+
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/android:colorBackground</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:navigationBarColor" tools:targetApi="o">?attr/android:colorBackground</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+    </style>
+
+    <style name="RoundedDialogTheme" parent="Theme.Material3.DayNight.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/dialog_rounded_bg</item>
+        <item name="android:background">@color/surface_container</item>
+        <item name="android:textColorPrimary">@color/primary_text</item>
+    </style>
+
+</resources>

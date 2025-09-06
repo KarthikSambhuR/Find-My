@@ -1,0 +1,16 @@
+{
+    "$schema": "node_modules/wrangler/config-schema.json",
+    "kv_namespaces": [
+        {
+        "binding": "MY_KV_NAMESPACE",
+        "id": "YOUR CLOUDFLARE KV ID GOES HERE"
+        }
+    ],
+    "name": "YOUR CLOUDFLARE WORKER NAME",
+    "main": "src/index.js",
+	"compatibility_date": "idk the creation date i guess its auto generated so yeah...",
+    "compatibility_flags": [],
+    "observability": {
+        "enabled": true
+    }
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base Colors -->
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#000000</color>
+
+    <!-- LIGHT THEME DEFINITIONS -->
+    <color name="app_background">#E2E2E2</color>
+    <color name="surface_container">#FFFFFF</color>
+    <color name="surface_container_disabled">#CDCDCD</color>
+    <color name="primary_text">#2C3E50</color>
+    <color name="primary_text_disabled">#4F6E8D</color>
+    <color name="secondary_text">#7F8C8D</color>
+    <color name="icon_tint">#34495E</color>
+    <color name="error">#B00020</color>
+
+    <!-- New colors for UserDetailActivity Buttons -->
+    <color name="detail_button_background">#FFFFFF</color>
+    <color name="detail_button_text_and_icon">#2C3E50</color>
+</resources>

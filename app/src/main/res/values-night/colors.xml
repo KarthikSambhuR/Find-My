@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- DARK THEME DEFINITIONS -->
+    <color name="app_background">#1C2833</color>
+    <color name="surface_container">#283747</color>
+    <color name="surface_container_disabled">#3D546D</color>
+    <color name="primary_text">#ECF0F1</color>
+    <color name="primary_text_disabled">#A1B7BD</color>
+    <color name="secondary_text">#95A5A6</color>
+    <color name="icon_tint">#BDC3C7</color>
+    <color name="error">#CF6679</color>
+
+    <!-- New colors for UserDetailActivity Buttons -->
+    <color name="detail_button_background">#283747</color>
+    <color name="detail_button_text_and_icon">#ECF0F1</color>
+</resources>

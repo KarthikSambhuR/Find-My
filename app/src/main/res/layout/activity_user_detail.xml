@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".UserDetailActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/detail_profile_card"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="7dp"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/detail_profile_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/profile_picture"
+            android:src="@drawable/ic_profile_placeholder" />
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/detail_display_name"
+        android:layout_marginTop="10dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textAppearance="?attr/textAppearanceTitleLarge"
+        app:layout_constraintStart_toEndOf="@id/detail_profile_card"
+        app:layout_constraintTop_toTopOf="@id/detail_profile_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Karthik Sambhu R" />
+    <LinearLayout
+        android:id="@+id/info_row"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="24dp"  android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toEndOf="@id/detail_profile_card"
+        app:layout_constraintTop_toBottomOf="@id/detail_display_name"
+        app:layout_constraintEnd_toEndOf="parent">
+        <TextView
+            android:id="@+id/detail_last_seen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            tools:text="Last seen: Just now" />
+        <ImageView
+            android:id="@+id/detail_battery_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_battery_full_24"
+            android:contentDescription="@string/battery_icon_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="?attr/colorOnSurface" />
+        <TextView
+            android:id="@+id/detail_battery_percentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:textColor="?attr/colorOnSurface"
+            tools:text="49%" />
+    </LinearLayout>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/map_card_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="27dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:layout_constraintTop_toBottomOf="@id/info_row"
+        app:layout_constraintBottom_toTopOf="@id/locating_progress_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <org.osmdroid.views.MapView
+            android:id="@+id/map_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/open_in_google_maps_button"
+            android:backgroundTint="@color/surface_container"
+            android:foreground="?attr/selectableItemBackground"
+            android:layout_width="wrap_content"
+            app:iconTint="@color/primary_text"
+            android:textColor="@color/primary_text"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:text="Google Maps"
+            app:icon="@drawable/ic_google_maps_logo" />
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/locating_progress_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:max="300"
+        android:progress="0"
+        android:visibility="invisible"
+        app:indicatorColor="#0EA271"
+        app:trackColor="#325A84"
+        app:trackThickness="16dp"
+        app:trackCornerRadius="8dp"
+        app:layout_constraintBottom_toTopOf="@id/button_row"
+        app:layout_constraintTop_toBottomOf="@id/map_card_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:progress="30"
+        tools:visibility="visible"/>
+
+
+    <LinearLayout
+        android:id="@+id/button_row"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/locate_button"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="Locate"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:gravity="center"
+            android:backgroundTint="@color/surface_container"
+            android:foreground="?attr/selectableItemBackground"
+            app:cornerRadius="24dp"
+            app:icon="@drawable/ic_locate_24"
+            android:textStyle="bold"
+            app:iconGravity="top"
+            app:iconTint="@color/primary_text"
+            android:textColor="@color/primary_text"
+            app:iconPadding="4dp"
+            app:iconSize="30dp"
+            app:strokeColor="@color/app_background"
+            app:strokeWidth="1dp" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/ring_button"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="Ring"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:gravity="center"
+            android:backgroundTint="@color/surface_container"
+            android:foreground="?attr/selectableItemBackground"
+            app:cornerRadius="24dp"
+            app:icon="@drawable/ic_ring_24"
+            android:textStyle="bold"
+            app:iconTint="@color/primary_text"
+            android:textColor="@color/primary_text"
+            app:iconGravity="top"
+            app:iconPadding="4dp"
+            app:iconSize="30dp"
+            app:strokeColor="@color/app_background"
+            app:strokeWidth="1dp" />
+    </LinearLayout>
+
+    <!-- NEW: Stop Ringing button, hidden by default-->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/stop_ring_button"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:text="Stop Ringing"
+        android:textSize="16sp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:icon="@drawable/ic_ring_24"
+        app:iconGravity="top"
+        app:layout_constraintTop_toBottomOf="@id/locating_progress_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:backgroundTint="@color/surface_container"
+        android:foreground="?attr/selectableItemBackground"
+        app:cornerRadius="24dp"
+        android:textStyle="bold"
+        app:iconPadding="4dp"
+        app:iconSize="30dp"
+        app:iconTint="@color/primary_text"
+        android:textColor="@color/primary_text"
+        app:strokeColor="@color/app_background"
+        app:strokeWidth="1dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
